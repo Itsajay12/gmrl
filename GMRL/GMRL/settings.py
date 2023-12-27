@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = "django-insecure-_juia+mbefhipu0n$5rnrywezd2avr^bd!oe84t#0px54h(3=%"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
@@ -41,17 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'user',
-    'tailwind',
+   
     'theme',
-    'django_browser_reload',
+  
     'jazzmin',
+     'whitenoise.runserver_nostatic',  
 
 ]
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -60,7 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+     'whitenoise.middleware.WhiteNoiseMiddleware',
+
+   
 ]
 
 ROOT_URLCONF = 'GMRL.urls'
@@ -89,12 +88,8 @@ WSGI_APPLICATION = 'GMRL.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'gmrl',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -133,8 +128,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
