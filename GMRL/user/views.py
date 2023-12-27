@@ -28,6 +28,7 @@ def index(request):
 
         return render(request, 'index.html', {'status': status})
     except Exception as e:
+        print(e)
         return render(request, '404.html')
 
 

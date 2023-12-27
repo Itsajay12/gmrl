@@ -43,10 +43,16 @@ INSTALLED_APPS = [
     'user',
    
     'theme',
+    'tailwind',
   
     'jazzmin',
      'whitenoise.runserver_nostatic',  
 
+]
+
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
