@@ -1,0 +1,16 @@
+
+Django==5.0
+django-tailwind==3.7.0
+gunicorn==21.2.0
+packaging==23.2
+sqlparse==0.4.4
+tzdata==2023.3
+django-cors-headers==4.3.0
+django-jazzmin==2.6.0
+Jinja2==3.1.2
+pi==0.1.2
+Pillow==10.1.0
+platformdirs==3.9.1
+preshed==3.0.9
+whitenoise==6.6.0
+virtualenv==20.24.2
