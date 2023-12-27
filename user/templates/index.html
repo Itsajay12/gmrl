@@ -1,0 +1,1261 @@
+{% extends 'base.html' %} {% load static %}
+ {% block content %}
+<div class="container">
+  <div
+    class="flex justify-center items-center text-xs gap-4 pt-4 relative z-10"
+  >
+    <a href=""> <i class="bi bi-facebook"></i></a>
+    <a href=""> <i class="bi bi-twitter-x"></i></a>
+    <a href=""> <i class="bi bi-linkedin"></i></a>
+    <a href=""> <i class="bi bi-instagram"></i></a>
+  </div>
+  <div class="nav relative -top-7 z-10 ">
+    <div class="flex justify-end mx-10 md:mx-28">
+      <a class="bg-green-500 text-white text-sm p-3 hover:bg-blue-700" href="{% url "bookappointemnt" %}" >
+        Make An Appointemnt
+      </a>
+    </div>
+    <div
+      class="flex justify-between items-center ml-10 md:mx-20 shadow-2xl p-5 uppercase font-extralight bg-white"
+    >
+      <a href="{% url "index" %}"
+        ><img
+          src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/gmrl-logo.svg"
+          alt=""
+          class="w-[40vw] md:w-[20vw]"
+      /></a>
+
+      <div class="block md:hidden">
+        <button class="text-4xl font-extrabold" data-collapse-toggle="navbar-default" 
+          ><i class="bi bi-list"></i
+        ></button>
+      </div>
+      
+      <div
+        class="hidden md:flex md:justify-between md:items-center md:gap-11 font-thin text-xs md:text-sm md:font-medium flex-wrap"
+      >
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url "aboutus" %}"
+        >
+          About us
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href=" {% url "tests" %} "
+        >
+          tests
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url "packages" %}"
+        >
+          packages
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url "blogs" %} "
+        >
+          blog
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url 'gallery' %}"
+        >
+          gallery
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url "branches" %}"
+        >
+          branches
+        </a>
+        <a
+          class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg"
+          href="{% url "contactus" %}"
+        >
+          contact us
+        </a>
+      </div>
+    </div>
+    <!-- hero Section-->
+  </div>
+  <div class="hidden w-full md:w-auto absolute h-2/3 border-2 border-green-500 rounded-lg" id="navbar-default">
+    <ul class="font-medium flex flex-col justify-between items-center p-4 md:p-0  border  border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "aboutus" %}"
+      >
+       about us
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "tests" %}"
+      >
+       tests
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "packages" %}"
+      >
+       packages
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "blogs" %}"
+      >
+        blogs
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "gallery" %}"
+      >
+        gallery
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "branches" %}"
+      >
+        branches
+      </a></li>
+      <li class="pb-5 border-b-2 border-b-blue-500 hover:border-b-green-500 w-full bg-green-400 rounded-lg"> <a
+        class="hover:bg-blue-800 hover:text-white text-slate-600 hover:p-1 hover:rounded-lg capitalize  flex justify-center items-center"
+        href="{% url "contactus" %}"
+      >
+        contact us
+      </a></li>
+    </ul>
+  </div>
+  {% block content2 %}
+  <div class="static md:absolute">
+    <div class="flex flex-col md:flex-row items-center justify-start">
+      <div
+        class="content pl-10 md:pl-10 md:w-[90rem] md:block flex flex-col justify-center items-center"
+      >
+        <h1 id="carouselTitle" class="text-gray-800 text-4xl md:text-6xl"></h1>
+        <p
+          id="carouselText"
+          class="w-50 overflow-hidden font-sans text-lg indent-8 py-3"
+        ></p>
+        <a
+          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5" href="{% url "contactus" %}"
+        >
+          Learn More
+    </a>
+      </div>
+      <div class="md:-mt-[13rem] w-auto h-auto md:w-full md:h-full md:ml-20">
+        <img
+          class="mySlides object-contain"
+          src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner-01.jpg"
+          style="width: 100%"
+        />
+        <img
+          class="mySlides object-contain"
+          src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/banner-02.jpg"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+    <div
+      class="mx-20 flex flex-col md:flex-row justify-center items-center relative bottom-14"
+    >
+      <div
+        class="bg-green-500 flex justify-center items-center font-bold p-5 w-96 gap-2"
+      >
+        <i class="bi bi-megaphone mr-0 md:mr-3"></i> News & Events
+      </div>
+      <div
+        class="bg-green-400 flex justify-center items-center font-light p-5 md:w-[55rem]"
+      >
+        <marquee width="" direction="left" height="">
+          Stay Updated with GMRL: Exciting News and Events Await! Explore the
+          latest in health breakthroughs, special promotions, and community
+          engagements right here. Check back often for updates that keep you
+          informed and inspired.
+        </marquee>
+      </div>
+    </div>
+    <!-- hero2 -->
+    <div
+      class="flex flex-col md:flex-row justify-center items-center mx-10 md:mx-36"
+    >
+      <div class="container">
+        <img
+          src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/welcome-image.jpg"
+          alt=""
+          class="rounded-md w-auto"
+        />
+      </div>
+      <div
+        class="content flex flex-col justify-center items-center md:items-start gap-4 md:ml-10"
+      >
+        <span class="text-blue-600">Welcome to GMRL Labs</span>
+        <h1 id="carouselTitle" class="text-gray-800 text-4xl md:text-5xl">
+          Elevating Health Through Precision Diagnostics: GMRL Laboratories
+        </h1>
+        <p class="text-justify leading-7">
+          GMRL Laboratories, situated in the heart of Thrippunithura, is your
+          trusted destination for comprehensive Health Check Up Packages at an
+          affordable cost. Our commitment to excellence is showcased through our
+          state-of-the-art, fully automated analyzers, which undergo daily
+          verification against Biorad USA Quality Controls. This stringent
+          quality assurance ensures that your diagnostic results are not only
+          accurate but also reliable.
+        </p>
+        <p class="leading-7 text-justify">
+          Our dedicated professionals are here to guide you through every step
+          of your health assessment, with a mission to provide the highest
+          standard of care and convenience. At GMRL Laboratories, your
+          well-being is our priority, and we’re honored to be your trusted
+          partner on your journey to a healthier, happier life.
+        </p>
+        <a
+          class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5" href="{% url "aboutus" %}"
+        >
+          Learn More
+      </a>
+      </div>
+    </div>
+    <div class="pt-5 grid grid-cols-2 md:grid-cols-5 mx-10 pb-3 md:mx-36">
+      <div class="border border-gray-400 p-5 md:border-l-0">
+        <a href="">
+          <div class="flex flex-col justify-center items-center">
+            <marquee
+              width=""
+              direction="up"
+              height=""
+              class="flex items-center justify-center h-20"
+            >
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                id="img1"
+                class="object-none object-left-top w-16 h-16"
+              />
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                class="object-none object-left-bottom w-16 h-[3.7rem] mt-10"
+              />
+            </marquee>
+            <h6
+              class="capitalize hover:text-green-500 delay-200 cursor-pointer"
+            >
+              Book an appointment
+            </h6>
+          </div>
+        </a>
+      </div>
+
+      <div class="border border-gray-400 p-5">
+        <a href="">
+          <div class="flex flex-col justify-center items-center">
+            <marquee
+              width=""
+              direction="up"
+              height=""
+              class="flex items-center justify-center h-20"
+            >
+              <img
+                src="{% static 'images/reach1.png' %}"
+                alt=""
+                id="img1"
+                class="object-none object-left-top w-16 h-16"
+              />
+              <img
+                src="{% static 'images/reach-2.png' %}"
+                alt=""
+                class="object-none object-top-bottom w-16 h-[3.7rem] mt-10"
+              />
+            </marquee>
+            <h6
+              class="capitalize hover:text-green-500 delay-200 cursor-pointer"
+            >
+              reach us
+            </h6>
+          </div>
+        </a>
+      </div>
+      <div class="border border-gray-400 p-5">
+        <a href="">
+          <div class="flex flex-col justify-center items-center">
+            <marquee
+              width=""
+              direction="up"
+              height=""
+              class="flex items-center justify-center h-20"
+            >
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                id="img1"
+                class="object-none object-top w-16 h-16"
+              />
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                class="object-none object-bottom w-16 h-16 mt-10"
+              />
+            </marquee>
+            <h6
+              class="capitalize hover:text-green-500 delay-200 cursor-pointer"
+            >
+              Health Packages
+            </h6>
+          </div>
+        </a>
+      </div>
+
+      <div class="border border-gray-400 p-5">
+        <a href="">
+          <div class="flex flex-col justify-center items-center">
+            <marquee
+              width=""
+              direction="up"
+              height=""
+              class="flex items-center justify-center h-20"
+            >
+              <img
+                src="{% static 'images/test1.png' %}"
+                alt=""
+                id="img1"
+                class="object-none object-top-top w-16 h-16"
+              />
+              <img
+                src="{% static 'images/test2.png' %}"
+                alt=""
+                class="object-none object-left-bottom w-16 h-[3.7rem] mt-10"
+              />
+            </marquee>
+            <h6
+              class="capitalize hover:text-green-500 delay-200 cursor-pointer"
+            >
+              available tests
+            </h6>
+          </div>
+        </a>
+      </div>
+      <div
+        class="border border-gray-400 p-5 col-span-2 md:col-span-1 md:border-r-0"
+      >
+        <a href="">
+          <div class="flex flex-col justify-center items-center">
+            <marquee
+              width=""
+              direction="up"
+              height=""
+              class="flex items-center justify-center h-20"
+            >
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                id="img1"
+                class="object-none object-right-top w-16 h-16"
+              />
+              <img
+                src="https://www.demo.ooly.in/gmrl/wp-content/themes/gmrl/images/welcome-btm-icons.png"
+                alt=""
+                class="object-none object-right-bottom w-16 h-[3.7rem] mt-10"
+              />
+            </marquee>
+            <h6
+              class="capitalize hover:text-green-500 delay-200 cursor-pointer"
+            >
+              home visit
+            </h6>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- section3 -->
+    <div class="container bg-blue-50">
+      <div class="mx-10 md:mx-36 pt-5">
+        <div class="main-con flex items-center justify-center">
+          <h1
+            class="text-center font-normal text-5xl w-auto md:w-[40rem]"
+            id="carouselTitle"
+          >
+            Diverse Departments for Comprehensive Health Services
+          </h1>
+        </div>
+
+        <!-- slider -->
+
+        <div
+          id="default-carousel"
+          class="relative w-full"
+          data-carousel="slide"
+        >
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div
+              class="duration-700 ease-in-out flex items-center justify-between gap-3"
+              data-carousel-item
+            >
+              <!-- card -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-min-30 h-30 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/department-icon.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">Pathology</span>
+              </div>
+              <!-- end card --><!-- card
+              -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/bio-chemistry.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">biochemistry</span>
+              </div>
+              <!-- end card --><!-- card
+              -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/microbiology.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">microBiolagy</span>
+              </div>
+              <!-- end card --><!-- card
+              -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/Serology.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">Serology</span>
+              </div>
+              <!-- end card -->
+            </div>
+            <!-- Item 2 -->
+            <div
+              class="duration-700 ease-in-out flex gap-4 justify-center items-center"
+              data-carousel-item
+            >
+              <!-- card -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/Immunology.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">Immunology</span>
+              </div>
+              <!-- end card -->
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/radiology.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">radiology</span>
+              </div>
+              <div
+                class="card flex flex-col justify-center items-center shadow-lg rounded-md p-4 bg-white w-40 h-50 md:w-72 md:h-64 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+              >
+                <img
+                  src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/molecular-biology.png"
+                  class=""
+                  alt="..."
+                />
+                <span class="text-gray-600 capitalize">molecularBiology</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div
+            class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+              aria-current="true"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+          </div>
+        </div>
+
+        <!-- slider end -->
+      </div>
+      <!-- Brousher -->
+      <div
+        class="broucher flex flex-col items-center justify-center relative top-20 md:flex-row mx-0 md:mx-20"
+      >
+        <div
+          class="bg-blue-700 text-white flex flex-col justify-center items-center rounded-l-none rounded-t-lg md:rounded-t-none md:rounded-l-md p-5 capitalize w-full md:flex-row gap-0 md:gap-4"
+        >
+          <h4 class="hidden md:block text-4xl">
+            <i class="fa-solid fa-phone"></i>
+          </h4>
+          <div class="flex flex-col justify-center items-center">
+            <h4 class="text-3xl md:text-2xl">emergency call:</h4>
+            <p class="font-normal md:font-light text-gray-400 pt-2">
+              immediate assistance available - dial now!
+            </p>
+          </div>
+          <h3
+            class="text-4xl md:text-3xl pt-4 font-bold cursor-pointer hover:text-green-300"
+          >
+            +91 81388 62626
+          </h3>
+        </div>
+        <div
+          class="bg-green-500 tex-white cursor-pointer flex justify-center items-center rounded-b-lg md:rounded-b-none p-5 text-white gap-5 w-full md:rounded-r-md"
+        >
+          <h4 class="text-4xl md:text-4xl">
+            <i class="fa-solid fa-download"></i>
+          </h4>
+          <div class="content">
+            <h3 class="text-2xl">Download</h3>
+            <h4 class="text-4xl md:text-3xl">BROCHURE</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- section3 end -->
+    <!--section4-->
+    <div class="relative top-20">
+      <!---->
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mx-20 mt-20"
+      >
+        <div class="content">
+          <h1 id="carouselTitle" class="text-5xl font-light">
+            GMRL Laboratories:
+          </h1>
+          <h1 id="carouselTitle" class="text-4xl font-light pt-3 md:pt-0">
+            Unveiling Our Range of Health Packages
+          </h1>
+        </div>
+        <div class="button">
+          <button
+            class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5"
+          >
+            View More
+          </button>
+        </div>
+      </div>
+      <div class="slider mt-3 mx-20">
+        <div
+          id="default-carousel"
+          class="relative w-full"
+          data-carousel="slide"
+        >
+          <!-- Carousel wrapper -->
+          <div
+            class="relative h-[30rem] overflow-hidden rounded-lg md:h-[40rem]"
+          >
+            <!-- Item 1 -->
+            <div
+              class="duration-700 ease-in-out flex items-center justify-between gap-3"
+              data-carousel-item
+            >
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/executive-package.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package" width="400rem"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹2499
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3 hover:text-white"
+                    >
+                      <h5 class="font-medium">Executive Packages</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package2.jpg "
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package" width="400rem"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹699
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3 hover:text-white "
+                    >
+                      <h5 class="font-medium">Ayush General</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package3.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package" width="400rem"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹999
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3 hover:text-white"
+                    >
+                      <h5 class="font-medium">Ayush Silver Plan</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Card 1 -->
+            </div>
+            <!-- End Item 1 -->
+
+            <!-- Item 2 -->
+            <div
+              class="duration-700 ease-in-out flex gap-4 justify-center items-center"
+              data-carousel-item
+            >
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package4.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package" width="400rem"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹999
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3 hover:text-white"
+                    >
+                      <h5 class="font-medium">Ayush Diabetic & Kidney Care</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Card 1 -->
+              <!-- Card 1 -->
+              <div class="card w-96">
+                <a href="">
+                  <div class="img">
+                    <div
+                      class="relative max-w-xl overflow-hidden bg-cover bg-no-repeat"
+                    >
+                      <img
+                        src="https://www.demo.ooly.in/gmrl/wp-content/uploads/2023/11/package5.jpg"
+                        class="zoom-on-hover transition-transform duration-500 ease-in-out transform hover:scale-110 h-[288px]"
+                        alt="Executive Package" width="400rem"
+                      />
+                      <div
+                        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-800 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70 flex justify-center items-center"
+                      >
+                        <b class="mx-10 text-2xl">
+                          <i class="fa-solid fa-link"></i
+                        ></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="text-white bg-gray-600 p-3 text-center">
+                      From: ₹1700
+                    </div>
+                    <div
+                      class="flex justify-between items-center bg-gray-400 hover:bg-green-600 p-3 hover:text-white"
+                    >
+                      <h5 class="font-medium">Ayush Gold</h5>
+                      <h5 class="text-sm font-semibold">
+                        <i class="fa-solid fa-greater-than"></i>
+                      </h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Card 1 -->
+            </div>
+            <!-- End Item 2 -->
+
+            <!-- Slider indicators -->
+            <div
+              class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+            >
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                aria-current="true"
+                aria-label="Slide 1"
+                data-carousel-slide-to="0"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                aria-current="false"
+                aria-label="Slide 2"
+                data-carousel-slide-to="1"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Section 4 ends-->
+      <!--Section 5-->
+      <div class="relative top-20">
+        <div class="container bg-blue-50">
+          <div class="mx-10 md:mx-36 pt-5">
+            <div class="main-con flex items-center justify-center">
+              <h1
+                class="text-center font-normal text-5xl w-auto md:w-[40rem]"
+                id="carouselTitle"
+              >
+                Our Testimonials
+              </h1>
+            </div>
+
+            <!-- slider -->
+
+            <div
+              id="default-carousel"
+              class="relative w-full"
+              data-carousel="slide"
+            >
+              <!-- Carousel wrapper -->
+              <div class="relative h-80 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div
+                  class="duration-700 ease-in-out flex items-center justify-between gap-3"
+                  data-carousel-item
+                >
+                  <!-- card -->
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Excellent place to go for clinical reports, all kind of
+                      tests are available there. Very professional staff's and
+                      good environment.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Josey</h2>
+                        <small>Thripunithura</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card --><!-- card -->
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Very friendly, prompt and quick service . No complicated
+                      procedures involved. Would definitely recommend.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Shaza</h2>
+                        <small>Chambakar</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card --><!-- card-->
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Your home collection facility was very nice and helpful
+                      for us. Those who came to collect the samples were
+                      professionally skillful, Thank u
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Eldhose</h2>
+                        <small>Chambakara</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!--endcard -->
+                </div>
+                <!-- Item 2 -->
+                <div
+                  class="duration-700 ease-in-out flex gap-4 justify-center items-center"
+                  data-carousel-item
+                >
+                  <!-- card -->
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify overflow-hidden">
+                      We had used GMRL's services twice. Both the times the
+                      experience was wonderful. I am very happy
+                      to see such polite, and professional staff. Great job
+                      team! Wish you continued success
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Krishnakumar</h2>
+                        <small>Chambakara</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card --><!-- card
+                  -->
+                  <div
+                    class="card flex flex-col justify-center items-center shadow-lg rounded-md p-6 bg-white w-30 h-30 md:w-96 md:h-80 gap-4 hover:border-2 hover:border-blue-600 cursor-pointer"
+                  >
+                    <p class="text-justify">
+                      Good service from here. Gets report at same day, very fast
+                      service.
+                    </p>
+                    <div class="border border-t-2 border-gray-500 w-60"></div>
+                    <div class="cont flex gap-2">
+                      <div
+                        class="profile bg-gray-200 rounded-full p-2 text-white"
+                      >
+                        <i class="fa-regular fa-user text-4xl"></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h2 class="text-lg">Abhinandh</h2>
+                        <small>Thripunithura</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card -->
+                </div>
+                <!-- Slider indicators -->
+                <div
+                  class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+                >
+                  <button
+                    type="button"
+                    class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                    data-carousel-slide-to="0"
+                  ></button>
+                  <button
+                    type="button"
+                    class="w-3 h-3 rounded-full border border-blue-600 hover:bg-blue-600"
+                    aria-current="false"
+                    aria-label="Slide 2"
+                    data-carousel-slide-to="1"
+                  ></button>
+                </div>
+              </div>
+
+              <!-- slider end -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Section 5 ends-->
+      <!--Section 6-->
+      <div class="relative top-32">
+        <div class="flex flex-col md:flex-row mx-10 md:mx-32">
+          <div class="flex flex-col justify-between gap-5 items-start">
+            <div class="content">
+              <h1 id="carouselTitle" class="text-5xl font-light">
+                Embrace Excellence:
+              </h1>
+              <h1 id="carouselTitle" class="text-5xl font-light">
+                Why GMRL Laboratories Stands Out
+              </h1>
+            </div>
+            <p class="text-lg text-gray-400">
+              At GMRL Laboratories, we stand out as a beacon of excellence,
+              offering top-notch diagnostic services and a commitment to your
+              well-being.
+            </p>
+            <ul class="text-gray-400">
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                Cutting-edge, precision diagnostic technology
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                A highly skilled, dedicated team of healthcare professionals
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                Stringent quality control protocols to ensure result accuracy
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                An extensive selection of comprehensive Health Check Up Packages
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                Competitive and accessible pricing to promote your health
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-check text-green-500 text-lg font-bold"
+                ></i>
+                Convenient, patient-centric services for your well-being
+              </li>
+            </ul>
+            <button
+              class="bg-blue-800 text-white p-2 rounded-2xl w-25 hover:bg-green-600 mt-5 mb-5"
+            >
+              Learn More
+            </button>
+          </div>
+          <div
+            class="flex flex-col gap-4 items-center border-2 border-blue-700 p-5"
+          >
+            <h1 id="CarouselTitle" class="text-4xl">Enquiry</h1>
+            <p class="font-light">
+              For any inquiries, please feel free to reach out to us.
+            </p>
+            <form
+              action=""
+              method="post"
+              class="flex flex-col justify-between items-center gap-4"
+            >
+              {% csrf_token %}
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                class="w-64 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder=" Email"
+                required
+                class="w-64 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+              />
+              <input
+                type="number"
+                name="phone"
+                placeholder="Phone"
+                required
+                class="w-64 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+              />
+              <textarea
+               
+                id=""
+                cols="25"
+                rows=""
+                class="w-64 border-2 border-gray-200 rounded-sm focus:border-blue-200"
+                placeholder="Message"
+                name="message"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="bg-blue-800 text-white p-2 rounded-lg w-64 hover:bg-green-600 mt-5 mb-5"
+              >
+                Submit
+              </button>
+            </form>
+          
+            {% if messages %} {% for message in messages %}
+            <div
+              class="{% if status %}bg-green-300 {% else%} bg-red-300 {% endif %} text-white rounded-xl alert font-medium text-center h-10 pt-2 p-5"
+            >
+              {{message}}
+            </div>
+        
+            {% endfor %} {% endif %}
+          </div>
+        </div>
+      </div>
+      <!--Section 6 ends-->
+      {% endblock content2 %}
+      <!--Footer starts-->
+      <div class="relative top-48 bg-blue-50">
+        <!--Brousher-->
+        <div class="mx-5 md:mx-20 bg-green-500 flex flex-col md:flex-row p-6">
+          <div
+            class="flex items-center flex-col md:flex-row gap-6 border-b-2 border-b-gray-500 md:border-b-0 md:border-r-2 md:border-r-gray-500 p-2"
+          >
+            <img
+              src="{% static 'images/make-appointment.png' %}"
+              alt=""
+              class="w-14"
+            />
+            <div class="flex flex-col md:flex-row gap-5 items-center">
+              <div
+                class="content flex flex-col items-center justify-center md:items-start"
+              >
+                <h2 class="text-2xl">Make an Appointment</h2>
+                <h4 class="pt-2">
+                  Call +91 81388 62626 or click Book Now to secure your
+                  appointment.
+                </h4>
+              </div>
+              <a
+              href="{% url "bookappointemnt" %}"
+                class="bg-black text-green-500 p-3 rounded-3xl hover:bg-blue-600 hover:text-white w-40 text-center cursor-pointer"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex items-center md:justify-start gap-4 pt-5 md:pt-0 pl-0 md:pl-10"
+          >
+            <img src="{% static 'images/openinh-hours-logo.png' %}" alt="" />
+            <div>
+              <h2 class="text-2xl">Opening Hours</h2>
+              <h6>Mon - Sat : 6:30pm to 6:00pm</h6>
+              <h6>Sun : 6:30am - 12:30pm</h6>
+            </div>
+          </div>
+        </div>
+        <!--Brousher ends-->
+        <div class="pt-20 mx-5 md:mx-20">
+          <div class="flex justify-between">
+            <div class="img">
+              <img
+                src="{% static 'images/gmrl-footer-logo.svg' %}"
+                alt=""
+                class="w-56"
+              />
+            </div>
+            <div class="cont text-gray-500 hidden md:block">
+              <h1 class="text-xl font-semibold text-black">Quick Links</h1>
+              <ul class="capitalize pt-3 flex flex-col gap-2">
+                <li><a href="" class="hover:text-blue-500">home</a></li>
+                <li><a href="" class="hover:text-blue-500">about us</a></li>
+                <li><a href="" class="hover:text-blue-500">packages</a></li>
+                <li><a href="" class="hover:text-blue-500">tests</a></li>
+                <li><a href="" class="hover:text-blue-500">gallery</a></li>
+                <li><a href="" class="hover:text-blue-500">blog</a></li>
+                <li><a href="" class="hover:text-blue-500">Testimonials</a></li>
+                <li><a href="" class="hover:text-blue-500">branches</a></li>
+                <li><a href="" class="hover:text-blue-500">contact us</a></li>
+                <li>
+                  <a href="" class="hover:text-blue-500">privacy policy</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-500"
+                    >terms and conditions</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="cont text-gray-500 hidden md:block">
+              <h1 class="text-xl font-semibold text-black">Departments</h1>
+              <ul class="capitalize pt-3 flex flex-col gap-2">
+                <li><a href="" class="hover:text-blue-500">pathology</a></li>
+                <li><a href="" class="hover:text-blue-500">biochemistry</a></li>
+                <li><a href="" class="hover:text-blue-500">microbiology</a></li>
+                <li><a href="" class="hover:text-blue-500">Serology</a></li>
+                <li><a href="" class="hover:text-blue-500">Immunology</a></li>
+                <li><a href="" class="hover:text-blue-500">radiology</a></li>
+                <li>
+                  <a href="" class="hover:text-blue-500">molecular biology</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="cont text-gray-500">
+              <h1 class="text-xl font-semibold text-black">Our Packages</h1>
+              <ul class="capitalize pt-3 flex flex-col gap-2">
+                <li>
+                  <a href="" class="hover:text-blue-500">executive package</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-500">Ayush General</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-500">Ayush Silver plan</a>
+                </li>
+                <li>
+                  <a href="" class="hover:text-blue-500"
+                    >Ayush Diabetic & Kidney care
+                  </a>
+                </li>
+                <li><a href="" class="hover:text-blue-500">Ayush Gold</a></li>
+              </ul>
+            </div>
+            <div class="cont text-gray-500">
+              <h1 class="text-xl font-semibold text-black">Get In Touch</h1>
+              <ul class="capitalize pt-3 flex flex-col gap-2">
+                <li>
+                  <a href=""
+                    >GMRL Laboratories Chambakkara,<br />
+                    Ernakulam, Ernakulam - 682011</a
+                  >
+                </li>
+                <li><a href="" class="cursor-pointer">+91 81388 62626</a></li>
+                <li><a href="" class="cursor-pointer">0484 0000 0000</a></li>
+                <li><a href="" class="cursor-pointer">info@gmrllabs.com</a></li>
+              </ul>
+              <div class="icons flex justify-between items-center pt-3">
+                <div class="fb">
+                  <i
+                    class="fa-brands fa-facebook-f bg-blue-600 text-white rounded-full text-lg w-7 px-1.5"
+                  ></i>
+                </div>
+                <div class="twitter-x">
+                  <i
+                    class="fa-brands fa-x-twitter bg-black text-white rounded-full text-lg w-7 px-1.5"
+                  ></i>
+                </div>
+                <div class="fb">
+                  <i
+                    class="fa-brands fa-linkedin bg-blue-600 text-white rounded-full text-lg w-7 px-1.5"
+                  ></i>
+                </div>
+                <div class="fb">
+                  <i
+                    class="fa-brands fa-instagram bg-orange-500 text-white rounded-full text-lg w-7 px-1.5"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-blue-100">
+          <div
+            class="mx-10 flex justify-between items-center h-20 flex-col md:flex-row"
+          >
+            <h4 class="text-xl">© 2023 GMRL Labs. All Right Reserved.</h4>
+            <a
+              href="https://www.linkedin.com/in/ajay-v44/"
+              class="text-xl font-semibold hover:text-orange-400 hover:underline"
+            >
+              <h3>Crafted by Ajay v</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+     {% endblock content %}
+    </div>
+  </div>
+</div>
